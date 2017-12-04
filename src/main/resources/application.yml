@@ -1,0 +1,31 @@
+##服务配置
+server:
+  port: 80
+  
+##属性配置
+config:
+  domain: http://test.com  #本工程域名(用于支付回调,微信需要配置安全域)
+  authurl: http://test.com #微信授权服务地址
+  authkey: pay #调用微信授权服务的appkey
+  
+##支付帐号配置
+account: 
+  wx: #微信
+    appid: 
+    secret: 
+    mchid:   #商户号
+    mchkey:   #商户号密钥
+
+##支付客户端配置
+appList: #业务类型列表
+  test: #订单标识(appkey)
+    title: 支付测试  #订单类型标题, 用于在第三方支付平台显示
+    notifyUrl: #支付成功后异步通知地址(post/可选)
+    returnUrl: #支付成功后同步回调地址(get/可选)
+    debug: true  ##是否测试状态(测试中支付金额为1分) 
+
+##日志配置
+logging:
+  level:
+    org:
+      springframework: INFO
